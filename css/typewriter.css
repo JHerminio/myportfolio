@@ -1,0 +1,96 @@
+.typewriter-container {
+  font-size: 2rem;
+  font-weight: bold;
+  align-items: center; 
+}
+
+.prefix {
+  margin-right: 12px;
+  color: #94a3b8;
+}
+
+.text-wrapper {
+  position: relative;
+  color: #38bdf8;
+  /* 
+     FIX 1: Locked to the new longest word length.
+     "UI/UX designer" is now your longest string at 14 characters.
+  */
+  width: 14ch; 
+  display: inline-block;
+}
+
+/* The visible text container */
+.dynamic-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #38bdf8; /* The cursor */
+  
+  animation:
+    typing 20s linear infinite,
+    blink 0.8s step-end infinite alternate;
+}
+
+.dynamic-text::before {
+  content: "";
+  animation: word-swap 20s infinite;
+}
+
+@keyframes typing {
+  /* Word 1: Frontend dev (12 chars) */
+  0%,
+  25% {
+    width: 0;
+  }
+  5%,
+  20% {
+    width: 12ch; /* FIX 2: Corrected step count */
+  }
+
+  /* Word 2: WordPress dev (13 chars) */
+  33%,
+  58% {
+    width: 0;
+  }
+  38%,
+  53% {
+    width: 13ch; /* FIX 3: Corrected step count */
+  }
+
+  /* Word 3: UI/UX designer (14 chars) */
+  66%,
+  91% {
+    width: 0;
+  }
+  71%,
+  86% {
+    width: 14ch; /* FIX 4: Corrected step count */
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Injecting the text strings chronologically into the empty span */
+@keyframes word-swap {
+  0%,
+  32% {
+    content: "Frontend dev";
+  }
+  33%,
+  65% {
+    content: "WordPress dev";
+  }
+  66%,
+  100% {
+    content: "UI/UX designer";
+  }
+}

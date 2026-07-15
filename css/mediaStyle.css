@@ -1,0 +1,256 @@
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+@media (max-width: 992px) {
+  /* Hamburger and Desktop Nav Adjustments */
+  .nav-links,
+  .navbar .btn-orange {
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .services-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-image-wrapper {
+    order: -1;
+  }
+  .info-grid {
+    text-align: left;
+  }
+  .about-buttons {
+    justify-content: center;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .timeline::after {
+    left: 31px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .timeline-item.right {
+    left: 0;
+  }
+  .timeline-item::after {
+    left: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+}
+/* 1. Large Screen Limits (Prevents content stretching too wide on 2K/4K screens) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* 2. Tablets & Small Desktops (992px down) */
+@media (max-width: 992px) {
+  /* Navigation Adjustments */
+  .nav-links,
+  .navbar > .btn-orange {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 10px 24px;
+    border-radius: 30px; /* Slightly tighter curves for smaller headers */
+    width: 100%;
+  }
+
+  /* Layout Grids */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-image-wrapper {
+    order: -1; /* Keeps profile image above copy */
+  }
+
+  .info-grid {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .projects-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Timeline Transformation into Single Column Left-Aligned */
+  .timeline::before {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::after {
+    /* left: 22px; */
+    left: 14px;
+    
+  }
+
+  .timeline-item.left::after {
+    right: auto;
+  }
+
+  /* Footer adjustments */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* 3. Phablets & Large Mobile Screens (768px down) */
+@media (max-width: 768px) {
+  section {
+    padding: 10px 0 40px 0;
+  }
+/* .section-header{
+  margin: 1rem 0 1rem 0;
+} */
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .profile-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .contact-wrapper {
+    padding: 25px;
+  }
+}
+
+/* 4. Small Mobile Phones (600px down) */
+@media (max-width: 600px) {
+  /* Fluid Typo & Hero Adjustments */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Mobile Drawer Expansion (Full-width for better touch target tracking) */
+  .mobile-nav-overlay {
+    width: 100%;
+    right: -100%;
+    padding: 120px 30px;
+  }
+
+  /* Layout Flattening */
+  .info-grid {
+    grid-template-columns: 1fr; /* Stack personal details vertically */
+    gap: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-buttons .btn-orange,
+  .about-buttons .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-form button {
+    width: 100%; /* Make submit button easy to hit with thumbs */
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-bottom-links a {
+    margin-left: 0;
+  }
+}
+
+/* 5. Micro Viewports (360px down - For vintage or compact screens) */
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .profile-circle {
+    width: 230px;
+    height: 230px;
+  }
+}
