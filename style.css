@@ -492,7 +492,7 @@ header.scrolled {
 
 .project-img-wrapper img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
   transition: 0.5s;
 }
@@ -510,6 +510,48 @@ header.scrolled {
   font-size: 0.85rem;
   font-weight: bold;
 }
+
+/*--- Read More ---*/
+.toggle-checkbox {
+  display: none;
+}
+
+.summary-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn {
+  color: var(--text-muted);
+  display: block;       /* Takes up the full width so alignment works */
+  text-align: right;    /* Pushes the text to the far right */
+  cursor: pointer;
+  font-weight: 600;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.read-more-btn::before {
+  content: "Read more...";
+}
+
+.toggle-checkbox:checked ~ .summary-text {
+  display: block;
+  overflow: visible;
+}
+
+.toggle-checkbox:checked ~ .read-more-btn::before {
+  content: "Show less";
+}
+
+
+
+
 
 .project-info h3 {
   margin: 10px 0;
