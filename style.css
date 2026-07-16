@@ -468,7 +468,7 @@ header.scrolled {
 /* --- PROJECTS SECTION --- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -518,7 +518,7 @@ header.scrolled {
 
 .summary-text {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 8px;
@@ -528,8 +528,8 @@ header.scrolled {
 
 .read-more-btn {
   color: var(--text-muted);
-  display: block;       /* Takes up the full width so alignment works */
-  text-align: right;    /* Pushes the text to the far right */
+  display: block;       
+  text-align: right;
   cursor: pointer;
   font-weight: 600;
   font-family: sans-serif;
@@ -548,10 +548,6 @@ header.scrolled {
 .toggle-checkbox:checked ~ .read-more-btn::before {
   content: "Show less";
 }
-
-
-
-
 
 .project-info h3 {
   margin: 10px 0;
