@@ -1,0 +1,37 @@
+/* --- GET IN TOUCH SECTION ---------------------------------*/
+.contact-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  background: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  font-size: 0.95rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-orange);
+}
+.contact-form button {
+  align-self: flex-start;
+}
+

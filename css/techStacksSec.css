@@ -1,0 +1,9 @@
+/* --- TECH STACKS SECTION ---------------------------------*/
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px; /* Spacing between cards */
+  max-width: 1100px;
+  margin: 0 auto;
+}

@@ -90,4 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Thank you! Your portfolio message was successfully transmitted.");
       e.target.reset();
     });
+
+  column.addEventListener("click", () => {
+    const title = column.querySelector("h3").innerText;
+    console.log(`You selected the ${title} stage.`);
+
+    // Example: Add an 'active' class if you want to lock it open on mobile click
+    // column.classList.toggle('active');
+  });
 });

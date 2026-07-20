@@ -1,0 +1,115 @@
+/* --- FOOTER ---------------------------------*/
+footer {
+  background: #07080c;
+  padding: 60px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 60px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-logo-box p {
+  color: var(--text-muted);
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+.footer-col h4 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+.footer-links li {
+  margin-bottom: 10px;
+}
+.footer-links a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.footer-links a:hover {
+  color: var(--primary-orange);
+  padding-left: 5px;
+}
+.contact-info li {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-info i {
+  color: var(--primary-orange);
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.social-icons a {
+  width: 35px;
+  height: 35px;
+  background: var(--bg-dark);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  background: var(--primary-orange);
+  color: white;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+.footer-bottom-links a {
+  margin-left: 15px;
+}
+.footer-bottom-links a:hover {
+  color: var(--primary-orange);
+}
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px; 
+}
+.icon-box {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #cda274; /* Golden border */
+  border-radius: 4px; /* Subtle radius matches the design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+.icon-box i,
+.icon-box svg {
+  font-size: 1.8rem;
+  color: #cda274;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.tech-name {
+  font-size: 0.95rem;
+  color: #cda274;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.icon-box:hover {
+  background-color: rgba(205, 162, 116, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(205, 162, 116, 0.2);
+}

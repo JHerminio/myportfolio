@@ -1,4 +1,4 @@
-/* --- RESPONSIVE BREAKPOINTS --- */
+/* --- RESPONSIVE BREAKPOINTS ---------------------------------*/
 
 @media (max-width: 992px) {
   /* Hamburger and Desktop Nav Adjustments */
@@ -152,9 +152,9 @@
   section {
     padding: 10px 0 40px 0;
   }
-/* .section-header{
+.section-header{
   margin: 1rem 0 1rem 0;
-} */
+}
   .section-header h2 {
     font-size: 2rem;
   }
@@ -171,7 +171,16 @@
   .contact-wrapper {
     padding: 25px;
   }
-}
+  .gallery-container {
+    flex-direction: column;
+    height:85vh;
+  }
+  .content {
+  bottom: 20px;
+  left: 20px;
+  }
+  
+  
 
 /* 4. Small Mobile Phones (600px down) */
 @media (max-width: 600px) {
@@ -254,3 +263,15 @@
     height: 230px;
   }
 }
+
+/* @media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+        height:70vh;
+    }
+    
+    .content {
+        bottom: 20px;
+        left: 20px;
+    }
+} */

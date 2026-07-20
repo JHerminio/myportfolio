@@ -1,0 +1,76 @@
+/* --- ABOUT ME SECTION ---------------------------------*/
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin: 1rem 0 0 0; /* Top, Right, Bottom, Left */
+}
+
+.about-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* .profile-circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 8px solid var(--primary-orange);
+    overflow: hidden;
+    position: relative;
+} */
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-badge {
+  background: rgba(255, 107, 74, 0.1);
+  color: var(--primary-orange);
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.about-content h2 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 15px;
+}
+.about-social-icons {
+  display: inline-flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+.about-social-icons a {
+  width: 35px;
+  height: 35px;
+  background: var(--bg-dark);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+.about-social-icons a:hover {
+  background: var(--primary-orange);
+  color: white;
+}
