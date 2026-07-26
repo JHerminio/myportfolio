@@ -41,7 +41,7 @@ header.scrolled {
   border-radius: 5px;
 } */
 
-.navbar img{
+.navbar .logo img{
 height: 50px;
 width: auto;
 }
