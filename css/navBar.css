@@ -34,11 +34,16 @@ header.scrolled {
   z-index: 1001;
 }
 
-.logo span {
+/* .logo span {
   background: var(--primary-orange);
   color: white;
   padding: 2px 8px;
   border-radius: 5px;
+} */
+
+.navbar img{
+height: 50px;
+width: auto;
 }
 
 .nav-links {

@@ -16,6 +16,10 @@ footer {
   margin-top: 15px;
   font-size: 0.9rem;
 }
+.logo img{
+height: 50px;
+width: auto;
+}
 .footer-col h4 {
   margin-bottom: 20px;
   font-size: 1.1rem;
