@@ -17,7 +17,7 @@ header.scrolled {
   padding: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  /* background: rgba(10, 11, 16, 0.75); */
+  background: rgba(10, 11, 16, 0.75);
 }
 
 .navbar {
