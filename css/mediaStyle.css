@@ -186,9 +186,6 @@
 
 /* 4. Small Mobile Phones (600px down) */
 @media (max-width: 600px) {
-  .hero-banner{
-    background-position: 50% 50%;
-  }
 
   /* Fluid Typo & Hero Adjustments */
   .hero-content h1 {

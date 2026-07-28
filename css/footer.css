@@ -47,6 +47,9 @@ width: auto;
 .contact-info i {
   color: var(--primary-orange);
 }
+.fa-location-dot{
+  padding-left: 5px;
+}
 .social-icons {
   display: flex;
   gap: 15px;
