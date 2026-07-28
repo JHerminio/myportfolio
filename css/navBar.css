@@ -5,24 +5,28 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 0;
-  transition: background 0.3s;
+
+  /* Smooth transition for background, blur, and padding changes */
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
+  
+  /* Initial blur state */
+  backdrop-filter: blur(0px);
 }
 
 header.scrolled {
   padding: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  transition: background 0.3s;
+  /* background: rgba(10, 11, 16, 0.75); */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  /* padding: 10px 30px; */
+  padding: 10px 30px 0 30px;
   border-radius: 50px;
-  backdrop-filter: blur(20px);
 }
 
 .logo {
@@ -34,16 +38,9 @@ header.scrolled {
   z-index: 1001;
 }
 
-/* .logo span {
-  background: var(--primary-orange);
-  color: white;
-  padding: 2px 8px;
-  border-radius: 5px;
-} */
-
 .navbar .logo img{
-height: 50px;
-width: auto;
+  height: 50px;
+  width: auto;
 }
 
 .nav-links {

@@ -25,6 +25,9 @@
   z-index: 4000;
 }
 
+html {
+  overflow-x: hidden;
+}
 
 body {
   background-color: var(--bg-dark);
@@ -34,7 +37,7 @@ body {
 }
 
 body.no-scroll {
-  overflow: hidden; /* Stop page movement behind drawer overlay */
+  overflow: hidden;
 }
 
 a {

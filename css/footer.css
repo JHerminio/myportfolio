@@ -74,13 +74,7 @@ width: auto;
   font-size: 0.85rem;
   color: var(--text-muted);
   display: flex;
-  justify-content: space-between;
-}
-.footer-bottom-links a {
-  margin-left: 15px;
-}
-.footer-bottom-links a:hover {
-  color: var(--primary-orange);
+  justify-content: center;
 }
 .tech-card {
   display: flex;

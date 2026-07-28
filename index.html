@@ -25,9 +25,11 @@
     <link rel="stylesheet" href="./css/techStacksSec.css">
     <link rel="stylesheet" href="./css/getInTouchSec.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/mediaStyle.css">
     <link rel="stylesheet" href="./css/typewriter.css">
     <link rel="stylesheet" href="./pageLoader/pageLoader.css">
+    
+    <!-- <link rel="stylesheet" href="./css/mediaStyle.css"> -->
+    <link rel="stylesheet" href="./css/mediaStylecopy.css">
 
     <!-- AOS JS and library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -66,8 +68,6 @@
                     <!-- <li><a href="#service" class="nav-item">Service</a></li> -->
                     <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
-                <!-- <button class="btn-orange" id="nav-talk-btn">Let's Talk <i class="fa-solid fa-arrow-up-right-from-square"></i></button> -->
-                
                 <a href="https://www.linkedin.com/in/jbherminio/" class="nav-item">
                     <button class="btn-orange" >Let's Talk <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                 </a>
@@ -93,34 +93,38 @@
             <!-- <li><a href="#service" class="mobile-nav-item">Service</a></li> -->
             <li><a href="#contact" class="mobile-nav-item">Contact</a></li>
             <li style="margin-top: 20px;">
-                <button class="btn-orange" id="mobile-talk-btn">Let's Talk <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                <a href="https://www.linkedin.com/in/jbherminio/" class="nav-item">
+                    <button class="btn-orange" >Let's Talk <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                </a>
             </li>
         </ul>
     </div>
 
     <!-- HOME SECTION -->
-    <section id="home" class="hero-banner">
-        <div class="hero-content">
-            <span class="about-badge">Welcome to my portfolio</span>
-            <h1>Jayson Herminio
-                <br>
-                <div class="typewriter-container">
-                    <span class="prefix"></span>
-                    <div class="text-wrapper">
-                    <span class="dynamic-text"></span>
+    <section id="home">
+        <div class="hero-banner">
+            <div class="hero-content">
+                <span class="about-badge">Welcome to my portfolio</span>
+                <h1>Jayson Herminio
+                    <br>
+                    <div class="typewriter-container">
+                        <span class="prefix"></span>
+                        <div class="text-wrapper">
+                        <span class="dynamic-text"></span>
+                    </div>
+                </h1>
+                    <br>
+                <p>Building high-end digital experiences <br>that match user expectations with business goals.</p>
+                <div class="about-buttons" style="justify-content: center; margin-top: 25px;">
+                    <a href="#project" class="btn-orange">View Projects <i class="fa-solid fa-folder-open"></i></a>
+                    <a href="#contact" class="btn-outline">Hire Me <i class="fa-solid fa-envelope"></i></a>
+                    
                 </div>
-            </h1>
-                <br>
-            <p>Building high-end digital experiences <br>that match user expectations with business goals.</p>
-            <div class="about-buttons" style="justify-content: center; margin-top: 25px;">
-                <a href="#project" class="btn-orange">View Projects <i class="fa-solid fa-folder-open"></i></a>
-                <a href="#contact" class="btn-outline">Hire Me <i class="fa-solid fa-envelope"></i></a>
-                
-            </div>
-            <div class="about-social-icons">
-                <a href="https://github.com/JHerminio"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/jayson-herminio-7a8b8b21a/"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/jaysonherminio/"><i class="fa-brands fa-instagram"></i></a>
+                <div class="about-social-icons">
+                    <a href="https://github.com/JHerminio"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jayson-herminio-7a8b8b21a/"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/jaysonherminio/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -132,19 +136,19 @@
                 <h2>About <span>Me</span></h2>
             </div>
             <div class="about-grid">
-                <div class="about-image-wrapper">
-                    <div class="profile-circle">
-                        <img src="./images/jh-home.webp" alt="Jayson Herminio Profile">
-                    </div>
-                </div>
                 <div class="about-content">
-                    <span class="about-badge">About Me</span>
+                    <!-- <span class="about-badge">About Me</span> -->
                     <h2>I am a passionate Frontend and WordPress Developer dedicated to building responsive, high-performance, and visually clean web solutions.</h2>
                     <p>My goal is to continuously grow as a Front-End and WordPress Developer by creating fast, responsive, and performance-driven websites that deliver real business results. I want to collaborate with innovative teams and clients to build digital experiences that aren’t just visually appealing, but are also deeply optimized for speed, usability, and long-term scalability.
                     </p>
                     <div class="about-buttons">
                         <a href="#contact" class="btn-orange">Contact me <i class="fa-solid fa-arrow-right"></i></a>
-                        <button class="btn-outline" id="about-resume-btn">Download my resume <i class="fa-solid fa-download"></i></button>
+                        <!-- <button class="btn-outline" id="about-resume-btn">Download my resume <i class="fa-solid fa-download"></i></button> -->
+                    </div>
+                </div>
+                <div class="about-image-wrapper">
+                    <div class="profile-image">
+                        <img src="./images/jh-home.webp" alt="Jayson Herminio Profile">
                     </div>
                 </div>
             </div>
@@ -649,8 +653,8 @@
                 <h4>Contact Info</h4>
                 <ul class="contact-info">
                     <!-- <li><i class="fa-solid fa-phone"></i> +(234) 567-8910</li> -->
-                    <li><i class="fa-solid fa-envelope"></i> jaysonberherminio@gmail.com</li>
-                    <li><i class="fa-solid fa-location-dot"></i> Block 29 Lot 3 Brooklyn Heights Subdivision Brgy. Panginay Guiguinto, Bulacan 3015</li>
+                    <li><i class="fa-solid fa-envelope"></i> Available upon request <br>(Send me a message to get in touch)</li>
+                    <li><i class="fa-solid fa-location-dot"></i>Brgy. Panginay Guiguinto, Bulacan 3015</li>
                     <!-- <li><i class="fa-solid fa-clock"></i> Mon - Fri / 9am-11pm</li> -->
                 </ul>
             </div>
@@ -665,10 +669,7 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>Copyright © 2026 JHerminio. All Rights Reserved.</p>
-            <div class="footer-bottom-links">
-                <a href="#">Terms & Service</a> | <a href="#">Privacy Policy</a>
-            </div>
+            <p>Copyright © 2026 by Jayson Herminio. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
