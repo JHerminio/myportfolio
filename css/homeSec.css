@@ -1,5 +1,5 @@
 /* --- HOME / HERO SECTION ---------------------------------*/
-.hero-banner {
+/* .hero-banner {
   background:
     linear-gradient(rgba(10, 11, 16, 0.4), rgba(10, 11, 16, 1.5)),
     url("./../images/homeBackground.webp")
@@ -12,10 +12,29 @@
   align-items: center;
   text-align: center;
   margin-top: -10px;
-}
+} */
 
+.hero-banner {
+  /* Using 100dvh for stable mobile viewport height, fallback to 100vh */
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -10px;
+
+  /* Corrected alpha clamp (0.0 to 1.0) */
+  background: 
+    linear-gradient(rgba(10, 11, 16, 0.4), rgba(10, 11, 16, 1.5)),
+    url("./../images/homeBackground.webp") no-repeat center center / cover;
+  background-attachment: fixed;
+}
 .hero-content h1 {
-  font-size: 4rem;
+  /* font-size: 4rem; */
+  /* font-size: clamp(2.5rem, 6vw, 4rem); */
+  font-size: clamp(2rem, 8vw, 4rem);
   line-height: 1.2;
   margin: 15px 0;
 }
@@ -25,7 +44,9 @@
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
