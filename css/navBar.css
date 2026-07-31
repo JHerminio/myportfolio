@@ -1,4 +1,3 @@
-/* --- HEADER / NAVBAR ---------------------------------*/
 header {
   position: fixed;
   top: 0;
@@ -7,23 +6,23 @@ header {
   z-index: 1000;
 
   /* Smooth transition for background, blur, and padding changes */
-  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
-  
-  /* Initial blur state */
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease,
+    padding 0.3s ease;
   backdrop-filter: blur(0px);
 }
 
 header.scrolled {
   padding: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 10px 30px; */
   padding: 10px 30px 0 30px;
   border-radius: 50px;
 }
@@ -37,7 +36,7 @@ header.scrolled {
   z-index: 1001;
 }
 
-.navbar .logo img{
+.navbar .logo img {
   height: 50px;
   width: auto;
 }
@@ -56,6 +55,7 @@ header.scrolled {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--primary-orange);
+  cursor: pointer;
 }
 
 /* --- HAMBURGER MENU BUTTON --- */
@@ -123,4 +123,104 @@ header.scrolled {
 .mobile-nav-links a:hover,
 .mobile-nav-links a.active {
   color: var(--primary-orange);
+}
+
+/* ==========================
+   DESKTOP DROPDOWN STYLES
+   ========================== */
+.navbar .dropdown {
+  position: relative;
+}
+
+.navbar .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 8px 0;
+  list-style: none;
+  display: none; /* Hidden by default */
+  z-index: 1000;
+}
+
+.navbar .dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.navbar .dropdown-menu li a:hover {
+  background-color: #f4f4f4;
+  color: #ff7f00;
+}
+
+/* Show dropdown on hover for desktop */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Rotate chevron icon on hover/active */
+.navbar .dropdown:hover .dropdown-toggle i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* ==========================
+   MOBILE DROPDOWN STRUCTURE & DESIGN
+   ========================== */
+
+/* Mobile Dropdown Styling */
+.mobile-dropdown {
+  width: 100%;
+}
+
+.mobile-dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Chevron arrow smooth rotation */
+.dropdown-icon {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hide menu by default with animated slide-down */
+.mobile-dropdown-menu {
+  list-style: none;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* Active Open State */
+.mobile-dropdown.active .mobile-dropdown-menu {
+  max-height: 300px; /* Adjust according to total height of items */
+  opacity: 1;
+  margin-top: 8px;
+}
+
+/* Rotate icon when active */
+.mobile-dropdown.active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Sub-item specific styling */
+.mobile-dropdown-menu .mobile-nav-item {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  padding: 8px 0;
+  display: block;
 }

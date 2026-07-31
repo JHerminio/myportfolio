@@ -2,11 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- HAMBURGER MENU TOGGLE ---
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
-  const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+
+  function closeMenu() {
+    hamburgerBtn?.classList.remove("open");
+    mobileNavOverlay?.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  }
 
   function toggleMenu() {
-    hamburgerBtn.classList.toggle("open");
-    mobileNavOverlay.classList.toggle("open");
+    hamburgerBtn?.classList.toggle("open");
+    mobileNavOverlay?.classList.toggle("open");
     document.body.classList.toggle("no-scroll");
   }
 
@@ -14,14 +19,30 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburgerBtn.addEventListener("click", toggleMenu);
   }
 
-  // Close the sidebar menu immediately when clicking any link
-  mobileNavItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      if (mobileNavOverlay.classList.contains("open")) {
-        toggleMenu();
+  // --- MOBILE DROPDOWN TOGGLE ---
+  const dropdownBtn = document.querySelector(".mobile-dropdown-btn");
+  const dropdownParent = document.querySelector(".mobile-dropdown");
+
+  if (dropdownBtn && dropdownParent) {
+    dropdownBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // Stops dropdown toggle from closing overlay
+      dropdownParent.classList.toggle("active");
+    });
+  }
+
+  // --- UNIVERSAL MENU CLOSE DELEGATION ---
+  // Using event delegation guarantees ALL <a> clicks close the drawer
+  if (mobileNavOverlay) {
+    mobileNavOverlay.addEventListener("click", (e) => {
+      const targetLink = e.target.closest("a");
+
+      // If clicked element is a link and NOT the "Projects" dropdown trigger
+      if (targetLink && !targetLink.classList.contains("mobile-dropdown-btn")) {
+        closeMenu();
       }
     });
-  });
+  }
 
   // --- SCROLL EFFECTS & SECTION SYNC ---
   const header = document.querySelector("header");
@@ -30,14 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const mNavItems = document.querySelectorAll(".mobile-nav-item");
 
   window.addEventListener("scroll", () => {
-    // Toggle header solid color
     if (window.scrollY > 50) {
-      header.classList.add("scrolled");
+      header?.classList.add("scrolled");
     } else {
-      header.classList.remove("scrolled");
+      header?.classList.remove("scrolled");
     }
 
-    // Highlight Active Link depending on current scrolling index
     let currentSectionId = "";
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - 150;
@@ -46,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Sync Desktop Nav Highlight
     navItems.forEach((item) => {
       item.classList.remove("active");
       if (item.getAttribute("href") === `#${currentSectionId}`) {
@@ -54,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Sync Mobile Drawer Nav Highlight
     mNavItems.forEach((item) => {
       item.classList.remove("active");
       if (item.getAttribute("href") === `#${currentSectionId}`) {
@@ -63,10 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Let's Talk Nav Button Trigger Actions
+  // --- LET'S TALK NAV TRIGGER ACTIONS ---
   const handleTalkRedirect = () => {
-    if (mobileNavOverlay.classList.contains("open")) toggleMenu();
-    document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+    closeMenu();
+    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   document
@@ -77,12 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ?.addEventListener("click", handleTalkRedirect);
 
   // --- MISC HANDLERS ---
-  // Resume Download Trigger
   document.getElementById("about-resume-btn")?.addEventListener("click", () => {
     alert("Downloading Resume file update package...");
   });
 
-  // Contact Form Submission Handling
   document
     .getElementById("contact-form-element")
     ?.addEventListener("submit", (e) => {
@@ -91,10 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target.reset();
     });
 
-  column.addEventListener("click", () => {
-    const title = column.querySelector("h3").innerText;
-    console.log(`You selected the ${title} stage.`);
+  const columns = document.querySelectorAll(".column");
+  columns.forEach((col) => {
+    col.addEventListener("click", () => {
+      const title = col.querySelector("h3")?.innerText;
+      if (title) {
+        console.log(`You selected the ${title} stage.`);
+      }
+    });
   });
-
-
 });
