@@ -1,16 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- DOM ELEMENTS ---
-  const header = document.querySelector("header");
-  const sections = document.querySelectorAll("section[id], div[id]");
-  const navItems = document.querySelectorAll(".nav-item");
-  const mNavItems = document.querySelectorAll(".mobile-nav-item");
-
+  // --- HAMBURGER MENU TOGGLE ---
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
-  const dropdownBtn = document.querySelector(".mobile-dropdown-btn");
-  const dropdownParent = document.querySelector(".mobile-dropdown");
 
-  // --- HAMBURGER MENU TOGGLE ---
   function closeMenu() {
     hamburgerBtn?.classList.remove("open");
     mobileNavOverlay?.classList.remove("open");
@@ -28,69 +20,67 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- MOBILE DROPDOWN TOGGLE ---
+  const dropdownBtn = document.querySelector(".mobile-dropdown-btn");
+  const dropdownParent = document.querySelector(".mobile-dropdown");
+
   if (dropdownBtn && dropdownParent) {
     dropdownBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      e.stopPropagation(); // Prevents dropdown toggle from closing overlay
+      e.stopPropagation(); // Stops dropdown toggle from closing overlay
       dropdownParent.classList.toggle("active");
     });
   }
 
   // --- UNIVERSAL MENU CLOSE DELEGATION ---
+  // Using event delegation guarantees ALL <a> clicks close the drawer
   if (mobileNavOverlay) {
     mobileNavOverlay.addEventListener("click", (e) => {
       const targetLink = e.target.closest("a");
+
+      // If clicked element is a link and NOT the "Projects" dropdown trigger
       if (targetLink && !targetLink.classList.contains("mobile-dropdown-btn")) {
         closeMenu();
       }
     });
   }
 
-  // --- HEADER SCROLL STATE ---
-  window.addEventListener(
-    "scroll",
-    () => {
-      header?.classList.toggle("scrolled", window.scrollY > 50);
-    },
-    { passive: true },
-  );
+  // --- SCROLL EFFECTS & SECTION SYNC ---
+  const header = document.querySelector("header");
+  const sections = document.querySelectorAll("section, div[id]");
+  const navItems = document.querySelectorAll(".nav-item");
+  const mNavItems = document.querySelectorAll(".mobile-nav-item");
 
-  // --- ACTIVE SECTION SYNC (IntersectionObserver) ---
-  function updateActiveNav(activeId) {
-    const selector = `[href="#${activeId}"]`;
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+
+    let currentSectionId = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 150;
+      if (window.scrollY >= sectionTop) {
+        currentSectionId = section.getAttribute("id");
+      }
+    });
 
     navItems.forEach((item) => {
-      item.classList.toggle(
-        "active",
-        item.getAttribute("href") === `#${activeId}`,
-      );
+      item.classList.remove("active");
+      if (item.getAttribute("href") === `#${currentSectionId}`) {
+        item.classList.add("active");
+      }
     });
 
     mNavItems.forEach((item) => {
-      item.classList.toggle(
-        "active",
-        item.getAttribute("href") === `#${activeId}`,
-      );
-    });
-  }
-
-  const observerOptions = {
-    root: null,
-    rootMargin: "-20% 0px -60% 0px", // Triggers active state when section enters upper-middle viewport
-    threshold: 0,
-  };
-
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        updateActiveNav(entry.target.id);
+      item.classList.remove("active");
+      if (item.getAttribute("href") === `#${currentSectionId}`) {
+        item.classList.add("active");
       }
     });
-  }, observerOptions);
+  });
 
-  sections.forEach((section) => sectionObserver.observe(section));
-
-  // --- NAV REDIRECT ACTIONS ---
+  // --- LET'S TALK NAV TRIGGER ACTIONS ---
   const handleTalkRedirect = () => {
     closeMenu();
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
@@ -103,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("mobile-talk-btn")
     ?.addEventListener("click", handleTalkRedirect);
 
-  // --- FORM & BUTTON HANDLERS ---
+  // --- MISC HANDLERS ---
   document.getElementById("about-resume-btn")?.addEventListener("click", () => {
     alert("Downloading Resume file update package...");
   });
@@ -116,7 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target.reset();
     });
 
-  document.querySelectorAll(".column").forEach((col) => {
+  const columns = document.querySelectorAll(".column");
+  columns.forEach((col) => {
     col.addEventListener("click", () => {
       const title = col.querySelector("h3")?.innerText;
       if (title) {
