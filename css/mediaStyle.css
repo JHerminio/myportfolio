@@ -171,15 +171,15 @@
   }
 
   .about-buttons {
-    flex-direction: column;
-    width: 100%;
+    /* flex-direction: column; */
+    width: fit-content;
     max-width: 300px;
     margin: 0 auto;
   }
 
   .about-buttons .btn-orange,
   .about-buttons .btn-outline {
-    width: 100%;
+    width: fit-content;
     text-align: center;
   }
 

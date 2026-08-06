@@ -16,9 +16,9 @@ footer {
   margin-top: 15px;
   font-size: 0.9rem;
 }
-.logo img{
-height: 50px;
-width: auto;
+.logo img {
+  height: 50px;
+  width: auto;
 }
 .footer-col h4 {
   margin-bottom: 20px;
@@ -47,7 +47,7 @@ width: auto;
 .contact-info i {
   color: var(--primary-orange);
 }
-.fa-location-dot{
+.fa-location-dot {
   padding-left: 5px;
 }
 .social-icons {
@@ -78,39 +78,4 @@ width: auto;
   color: var(--text-muted);
   display: flex;
   justify-content: center;
-}
-.tech-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80px; 
-}
-.icon-box {
-  width: 80px;
-  height: 80px;
-  border: 1px solid #cda274; /* Golden border */
-  border-radius: 4px; /* Subtle radius matches the design */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-}
-.icon-box i,
-.icon-box svg {
-  font-size: 1.8rem;
-  color: #cda274;
-  width: 1.8rem;
-  height: 1.8rem;
-}
-.tech-name {
-  font-size: 0.95rem;
-  color: #cda274;
-  font-weight: 500;
-  white-space: nowrap;
-}
-.icon-box:hover {
-  background-color: rgba(205, 162, 116, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(205, 162, 116, 0.2);
 }

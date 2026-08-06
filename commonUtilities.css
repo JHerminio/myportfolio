@@ -89,6 +89,7 @@ section {
   cursor: pointer;
   transition: 0.3s;
   display: inline-block;
+  width: fit-content;
 }
 
 .btn-orange:hover {
@@ -112,3 +113,5 @@ section {
   border-color: var(--primary-orange);
   color: var(--primary-orange);
 }
+
+
