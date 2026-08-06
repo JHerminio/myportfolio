@@ -79,3 +79,6 @@ footer {
   display: flex;
   justify-content: center;
 }
+.footer-bottom a {
+  color: var(--primary-orange);
+}
