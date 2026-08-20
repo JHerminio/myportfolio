@@ -142,4 +142,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add class when scrolling INTO view
+          entry.target.classList.add("is-visible");
+        } else {
+          // Remove class when scrolling OUT of view (allows re-animation)
+          entry.target.classList.remove("is-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.15, // Triggers when 15% of the element is visible
+    },
+  );
+
+  document
+    .querySelectorAll(".animate-on-scroll")
+    .forEach((el) => observer.observe(el));
 });

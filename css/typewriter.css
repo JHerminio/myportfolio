@@ -6,12 +6,12 @@
 
 .prefix {
   margin-right: 12px;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .text-wrapper {
   position: relative;
-  color: #38bdf8;
+  color: var(--primary-orange);
   /* 
      FIX 1: Locked to the new longest word length.
      "UI/UX designer" is now your longest string at 14 characters.
@@ -25,7 +25,7 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid #38bdf8; /* The cursor */
+  border-right: 3px solid var(--primary-orange); /* The cursor */
 
   animation:
     typing 20s linear infinite,

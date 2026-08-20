@@ -19,7 +19,7 @@
   margin: 15px 0;
 }
 
-.hero-content h1 span {
+.hero-content span {
   color: var(--primary-orange);
 }
 
@@ -28,4 +28,29 @@
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
+}
+
+
+
+.home-social-icons {
+  display: inline-flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.home-social-icons a {
+  width: 35px;
+  height: 35px;
+  background: var(--bg-dark);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.home-social-icons a:hover {
+  background: var(--primary-orange);
+  color: white;
 }
