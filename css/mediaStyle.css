@@ -13,7 +13,10 @@
   .navbar > .btn-orange {
     display: none;
   }
-
+  .about-header {
+    text-align: center;
+    margin: 5rem 0 1rem 0;
+  }
   .hamburger-btn {
     display: flex;
   }
@@ -27,7 +30,7 @@
   /* Layout Grids */
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    /* gap: 40px; */
     text-align: center;
   }
 
