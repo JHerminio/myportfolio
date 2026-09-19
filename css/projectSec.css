@@ -84,7 +84,8 @@
 
 .read-more-btn {
   color: var(--text-muted);
-  display: inline-block;
+  /* display: inline-block; */
+  display: block;
   float: right;
   cursor: pointer;
   font-weight: 600;
